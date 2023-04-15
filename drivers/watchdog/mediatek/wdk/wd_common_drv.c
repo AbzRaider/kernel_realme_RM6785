@@ -552,10 +552,10 @@ static void kwdt_process_kick(int local_bit, int cpu,
 		pr_info("%s", msg_buf);
 	else
 		printk_deferred("%s", msg_buf);
-
-	if (dump_timeout)
-		dump_wdk_bind_info();
-
+        /*
+	 * if (dump_timeout)
+	 *	dump_wdk_bind_info();
+         */
 #ifdef CONFIG_LOCAL_WDT
 	printk_deferred("[wdk] cpu:%d, kick local wdt,RT[%lld]\n",
 			cpu, sched_clock());
